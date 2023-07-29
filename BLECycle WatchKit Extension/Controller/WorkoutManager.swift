@@ -133,16 +133,22 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
 
-    func addDistance(distance: Double) {
+    // Speed in meters/second
+    func addDistance(speed: Double) {
         if !running {
             return
         }
         let startTime = previousTime ?? session?.startDate ?? Date()
-        let endTime = startTime.addingTimeInterval(builder?.elapsedTime ?? 0)
+        let endTime = Date()
+        previousTime = endTime
+        let time: TimeInterval = endTime.timeIntervalSince(startTime)
+        let distance = Double(time) * speed
+        if distance <= 0 {
+            return
+        }
         let value = HKQuantitySample(type: HKQuantityType.quantityType(forIdentifier: .distanceCycling)!,
                                      quantity: HKQuantity(unit: HKUnit.meter(), doubleValue: distance),
                                      start: startTime, end: endTime)
-        previousTime = startTime
         builder?.add([value], completion: { _, error in
             if let errorMessage = error {
                 print(errorMessage)

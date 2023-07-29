@@ -9,7 +9,6 @@ import Foundation
 class PeripheralManager: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     var centralManager: CBCentralManager!
     var foundPeripherals: [String: CBPeripheral] = [:]
-    var previousDist = 0
     var addDistance: ((Double) -> Void)?
     @Published var connected = false
 
@@ -50,7 +49,7 @@ class PeripheralManager: NSObject, ObservableObject, CBCentralManagerDelegate, C
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices _: Error?) {
         for service in peripheral.services ?? [] {
-            if service.uuid == CBUUID(string: "0x1816") {
+            if service.uuid == CBUUID(string: "0x1826") {
                 peripheral.discoverCharacteristics(nil, for: service)
             }
         }
@@ -58,8 +57,7 @@ class PeripheralManager: NSObject, ObservableObject, CBCentralManagerDelegate, C
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error _: Error?) {
         for characteristics in service.characteristics ?? [] {
-            print(characteristics.uuid)
-            if characteristics.uuid == CBUUID(string: "0x2a5b") {
+            if characteristics.uuid == CBUUID(string: "0x2ad2") {
                 peripheral.readValue(for: characteristics)
                 peripheral.setNotifyValue(true, for: characteristics)
             }
@@ -68,19 +66,12 @@ class PeripheralManager: NSObject, ObservableObject, CBCentralManagerDelegate, C
 
     func peripheral(_: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error _: Error?) {
         if let value = characteristic.value {
-            let cscData = CSCData(data: value)
-            if let revs = cscData?.wheelRevolutions?.revolutions {
-                var dist = revs * 2
-                if let cranks = cscData?.crankRevolutions?.revolutions {
-                    dist = (revs * 3) - (cranks * 4)
+            let indoorBikeData = IndoorBikeData(data: value)
+            if let add = addDistance {
+                if let speed = indoorBikeData?.speed {
+                    // 1/100th km/hr to m/s
+                    add(Double(speed) / 360.0)
                 }
-                if let addDistance = addDistance {
-                    addDistance(Double(dist - previousDist))
-                    previousDist = dist
-                }
-                // 293 revs 121 cranks .31 km
-                // 158 revs 34 cranks .32 km
-                // 160 revs 47 cranks .32
             }
         }
     }

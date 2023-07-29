@@ -37,4 +37,8 @@ extension HKWorkoutActivityType: Identifiable {
     public var id: UInt {
         rawValue
     }
+
+    public var name: String {
+        return "Bike"
+    }
 }

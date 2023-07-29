@@ -19,62 +19,18 @@ extension Data {
     }
 }
 
-struct CSCData {
-    var wheelRevolutions: RevolutionData?
-    var crankRevolutions: RevolutionData?
+struct IndoorBikeData {
+    let flags: UInt16?
+    let speed: UInt16?
+    let cadence: UInt16?
+    let power: UInt16?
 
     init?(data: Data) {
-        var data = data // Make mutable so we can consume it
+        var data = data
 
-        // First pull off the flags
-        guard let flags = Flags(consuming: &data) else { return nil }
-
-        // If wheel revolution is present, decode it
-        if flags.contains(.wheelRevolutionPresent) {
-            guard let value = RevolutionData(consuming: &data, countType: UInt32.self) else {
-                return nil
-            }
-            wheelRevolutions = value
-        }
-
-        // If crank revolution is present, decode it
-        if flags.contains(.wheelRevolutionPresent) {
-            guard let value = RevolutionData(consuming: &data, countType: UInt16.self) else {
-                return nil
-            }
-            crankRevolutions = value
-        }
-    }
-}
-
-struct Flags: OptionSet {
-    let rawValue: UInt8
-
-    static let wheelRevolutionPresent = Flags(rawValue: 1 << 0)
-    static let crankRevolutionPresent = Flags(rawValue: 1 << 1)
-}
-
-extension Flags {
-    init?(consuming data: inout Data) {
-        guard let byte = data.consume(type: UInt8.self) else { return nil }
-        self.init(rawValue: byte)
-    }
-}
-
-struct RevolutionData {
-    var revolutions: Int
-    var eventTime: TimeInterval
-
-    init?<RevolutionCount>(consuming data: inout Data, countType _: RevolutionCount.Type)
-        where RevolutionCount: FixedWidthInteger
-    {
-        guard let count = data.consume(type: RevolutionCount.self)?.littleEndian,
-              let time = data.consume(type: UInt16.self)?.littleEndian
-        else {
-            return nil
-        }
-
-        revolutions = Int(clamping: count)
-        eventTime = TimeInterval(time) / 1024.0 // Unit is 1/1024 second
+        flags = data.consume(type: UInt16.self)
+        speed = data.consume(type: UInt16.self)?.littleEndian
+        cadence = data.consume(type: UInt16.self)?.littleEndian
+        power = data.consume(type: UInt16.self)?.littleEndian
     }
 }
