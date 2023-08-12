@@ -13,7 +13,6 @@
 		E0CF93A22661A76300F7CED2 /* BLECycle WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E0CF93A12661A76300F7CED2 /* BLECycle WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E0CF93A72661A76400F7CED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CF93A62661A76400F7CED2 /* Assets.xcassets */; };
 		E0CF93B52661A76500F7CED2 /* BLECycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF93B42661A76500F7CED2 /* BLECycleApp.swift */; };
-		E0CF93B72661A76500F7CED2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF93B62661A76500F7CED2 /* ComplicationController.swift */; };
 		E0CF93B92661A76600F7CED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CF93B82661A76600F7CED2 /* Assets.xcassets */; };
 		E0CF93BC2661A76600F7CED2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CF93BB2661A76600F7CED2 /* Preview Assets.xcassets */; };
 		E0DCA6202661B27D00496154 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DCA61F2661B27D00496154 /* HealthKit.framework */; };
@@ -55,7 +54,6 @@
 		6D2CE6722A7195B7006551E2 /* PeripheralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralManager.swift; sourceTree = "<group>"; };
 		6D2CE6742A719639006551E2 /* PeripheralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralView.swift; sourceTree = "<group>"; };
 		6D5AE7302A71DA04008C37AD /* BluetoothData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothData.swift; sourceTree = "<group>"; };
-		9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		B97863FA9DADB69A3D7E0241 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		E08DF6C32661BF0600EB0963 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E0CF939D2661A76300F7CED2 /* BLECycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLECycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +61,6 @@
 		E0CF93A62661A76400F7CED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0CF93A82661A76400F7CED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0CF93B42661A76500F7CED2 /* BLECycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECycleApp.swift; sourceTree = "<group>"; };
-		E0CF93B62661A76500F7CED2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		E0CF93B82661A76600F7CED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0CF93BB2661A76600F7CED2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0CF93BD2661A76600F7CED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,14 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2165A03224FF992354618B48 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
 		6D5AE72F2A71D9E6008C37AD /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +135,6 @@
 				E0DCA6212661B38900496154 /* Views */,
 				E0DCA61D2661B27D00496154 /* BLECycle WatchKit Extension.entitlements */,
 				E0CF93B42661A76500F7CED2 /* BLECycleApp.swift */,
-				E0CF93B62661A76500F7CED2 /* ComplicationController.swift */,
 				E0CF93B82661A76600F7CED2 /* Assets.xcassets */,
 				E0CF93BD2661A76600F7CED2 /* Info.plist */,
 				E0CF93BA2661A76600F7CED2 /* Preview Content */,
@@ -306,7 +294,6 @@
 				6D2CE6752A719639006551E2 /* PeripheralView.swift in Sources */,
 				E0DCA62C2661B3CD00496154 /* ControlsView.swift in Sources */,
 				E0CF93B52661A76500F7CED2 /* BLECycleApp.swift in Sources */,
-				E0CF93B72661A76500F7CED2 /* ComplicationController.swift in Sources */,
 				E0DCA62D2661B3CD00496154 /* ActivityRingsView.swift in Sources */,
 				E0DCA6242661B3A800496154 /* WorkoutManager.swift in Sources */,
 				E0DCA6322661B3CD00496154 /* MetricsView.swift in Sources */,
@@ -331,7 +318,6 @@
 /* Begin XCBuildConfiguration section */
 		E0CF93BE2661A76600F7CED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -392,7 +378,6 @@
 		};
 		E0CF93BF2661A76600F7CED2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -447,11 +432,9 @@
 		};
 		E0CF93C52661A76600F7CED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "BLECycle WatchKit Extension/BLECycle WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -461,7 +444,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BLECycle${SAMPLE_CODE_DISAMBIGUATOR}.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickjmiller.BLECycle.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -474,11 +457,9 @@
 		};
 		E0CF93C62661A76600F7CED2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "BLECycle WatchKit Extension/BLECycle WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -488,7 +469,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BLECycle${SAMPLE_CODE_DISAMBIGUATOR}.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickjmiller.BLECycle.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -501,14 +482,13 @@
 		};
 		E0CF93C92661A76600F7CED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Z2WPZ9TKZ;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BLECycle${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickjmiller.BLECycle.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -517,14 +497,13 @@
 		};
 		E0CF93CA2661A76600F7CED2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CCDDFA02FD1E157086EAD25 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Z2WPZ9TKZ;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BLECycle${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nickjmiller.BLECycle.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
